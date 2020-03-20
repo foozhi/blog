@@ -1,0 +1,18 @@
+baseURL = "http://foozhi.github.io/blog"
+languageCode = "zh"
+title = "FooZhi Blog"
+theme = "hugo-blog-jeffprod"
+summaryLength = 70
+
+[permalinks]
+  post = "/:year/:filename"
+
+[taxonomies]
+  tag = "tags"
+  archive = "archives"
+[params]
+  author="foozhi"
+  description="Free Developer"
+  email="zzf.george@gmail.com"
+  url="http://foozhi.github.io/blog"
+  avatar="./images/avatar.jpg"
