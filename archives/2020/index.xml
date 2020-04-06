@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020 on FooZhi Blog</title>
+    <link>http://localhost:1313/blog/archives/2020/</link>
+    <description>Recent content in 2020 on FooZhi Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 06 Apr 2020 18:23:15 +0800</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/blog/archives/2020/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cpu Buses</title>
+      <link>http://localhost:1313/blog/2020/cpu-buses/</link>
+      <pubDate>Mon, 06 Apr 2020 18:23:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/blog/2020/cpu-buses/</guid>
+      <description>CPU 总线 分开来说，微处理器，存储器和输入/输出端是有趣的组件，但它们无法做任何有用的事情。组合起来，如果他们可以彼此通信，他们可以形成一个完整的系统。这种通信通过一组信号线束（称为总线）将系统在一起。（In isolation, the microprocessor, the memory and the input/output ports are interesting components, but they cannot do anything useful. In combination, they can form a complete system if they can communicate with each other. This communication is accomplished over bundles of signal wires (known as buses) that connect the parts of the system together.）
+任何处理器系统中通常都有三种类型的总线： + 地址总线(address bus)：这决定了处理器从中读取数据或将数据写入的内存中的位置。(this determines the location in memory that the processor will read data from or write data to.</description>
+    </item>
+    
+  </channel>
+</rss>
