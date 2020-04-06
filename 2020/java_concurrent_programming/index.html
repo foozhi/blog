@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.59.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>FooZhi Blog  | FooZhi Blog</title>
+    <title>FooZhi Blog  | Java 并发编程</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -12,9 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="http://foozhi.github.io/blog/css/blog.css" />
     
-  <link href="http://foozhi.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="FooZhi Blog" />
-  <link href="http://foozhi.github.io/blog/index.xml" rel="feed" type="application/rss+xml" title="FooZhi Blog" />
-
 </head>
 <body>
 
@@ -33,7 +29,7 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        FooZhi Blog
+                        Java 并发编程
                     
                 </h1>
                 
@@ -46,23 +42,11 @@
     <div class="section">
     
 
-
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <h3>Welcome to my blog !</h3>
-                <hr>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="http://foozhi.github.io/blog/2020/java_concurrent_programming/">Java 并发编程</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at March 23, 2020 &middot;
-                                    <i class="far fa-clock"></i>&nbsp;1 min read
-                                </p>
-                                <p><p>这里汇总一些，Java并发编程相关的知识，推荐一些公认的写的和好的书籍。<strong>提及的知识并非原创、均附有出处链接，详情可以点击进入</strong></p>
+                <p>这里汇总一些，Java并发编程相关的知识，推荐一些公认的写的和好的书籍。<strong>提及的知识并非原创、均附有出处链接，详情可以点击进入</strong></p>
 
 <h1 id="java-内存模型">Java 内存模型</h1>
 
@@ -72,11 +56,35 @@
 
 <blockquote>
 <p>JMM 屏蔽了各种硬件和操作系统的内容访问差异，让Java程序在各种平台下达到了一致的并发效果。</p>
-</blockquote>...</p>
-                            </div>
-                        </div>
-                    </article>
-                
+</blockquote>
+
+<p>推荐这本书 [深入理解Java内存模型，程晓明] 对并发讲解的通熟易懂，整体的了解下JMM。下面是摘自开篇的一段概述：</p>
+
+<blockquote>
+<p>在并发编程中，我们需要处理两个关键问题：线程之间如何通信及线程之间如何同步（这里的线程是指并发执行的活动实体）。通信是指线程之间以何种机制来交换信息。在命令式编程中，线程之间的通信机制有两种：共享内存和消息传递。</p>
+
+<p>在共享内存的并发模型里，线程之间共享程序的公共状态，线程之间通过写-读内存中的公共状态来隐式进行通信。在消息传递的并发模型里，线程之间没有公共状态，线程之间必须通过明确的发送消息来显式进行通信。</p>
+
+<p>同步是指程序用于控制不同线程之间操作发生相对顺序的机制。在共享内存并发模型里，同步是显式进行的。程序员必须显式指定某个方法或某段代码需要在线程之间互斥执行。在消息传递的并发模型里，由于消息的发送必须在消息的接收之前，因此同步是隐式进行的。</p>
+
+<p>Java 的并发采用的是共享内存模型，Java 线程之间的通信总是隐式进行，整个通信过程对程序员完全透明。如果编写多线程程序的 Java 程序员不理解隐式进行的线程之间通信的工作机制，很可能会遇到各种奇怪的内存可见性问题。</p>
+</blockquote>
+
+<p>深入链接JMM之前，简单了解下硬件内存架构，对于理解JMM有很大的帮助，如一些JMM设计的来由，以及JMM如何与它进行交互等。</p>
+
+<h2 id="计算机硬件内存架构">计算机硬件内存架构</h2>
+
+<p>下面是一个简化的计算机内存模型图<sub><a href="http://tutorials.jenkov.com/java-concurrency/java-memory-model.html">Java Memory Model, Jakob Jenkov</a></sub></p>
+
+<p><img src="./hardware_memory_architecture.png" alt="计算机模型图" /></p>
+
+<p>现代计算机通常由2个或更多个CPU，每个CPU可以有多个核，这意味着，并行的运行多个线程时可能的。</p>
+
+<p>每个CPU都有一些列的寄存器——CPU内存的重要组成, 并且CPU对于寄存器的访问速度远大于对‘主存’(Main Memory, RAM)的访问。</p>
+
+<p>每个CPU都有一个CPU缓存层(CPU cache memory Layer)。CPU对于CPU混存的访问速度介于‘寄存器’和’主存’之前，比寄存器慢，但是快于‘主存’。</p>
+
+<p>通常情况下，当一个CPU需要读取主存时，它会将主存的部分读到CPU缓存中。最后，它可能将缓存中的部分内容读到它的内部寄存器中，然后在寄存器中执行操作。当CPU需要将结果写回到主存中去时，它会将内部寄存器的值刷新到缓存中，然后在某个时间点将值刷新回主存。</p>
             </div>
         </div>
     </div>
@@ -105,6 +113,11 @@
     </div>
 </div>
     <br>
+                
+
+
+    
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5">Archives</h1>
@@ -114,21 +127,6 @@
     </div>
 </div>
 
-    </div>
-</div>
-<div class="columns">
-    <div class="column is-9">
-        <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-            
-            
-            <ul class="pagination-list">
-                
-                <li class="pagination__item">
-                    <a class="pagination-link is-current" aria-label="Goto page 1" href="/blog/">1</a>
-                </li>
-                
-            </ul>
-        </nav>
     </div>
 </div>
 

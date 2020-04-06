@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>理论与实践 on FooZhi Blog</title>
+    <link>http://foozhi.github.io/blog/tags/%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</link>
+    <description>Recent content in 理论与实践 on FooZhi Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 23 Mar 2020 11:58:43 +0800</lastBuildDate>
+    
+        <atom:link href="http://foozhi.github.io/blog/tags/%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 并发编程</title>
+      <link>http://foozhi.github.io/blog/2020/java_concurrent_programming/</link>
+      <pubDate>Mon, 23 Mar 2020 11:58:43 +0800</pubDate>
+      
+      <guid>http://foozhi.github.io/blog/2020/java_concurrent_programming/</guid>
+      <description>&lt;p&gt;这里汇总一些，Java并发编程相关的知识，推荐一些公认的写的和好的书籍。&lt;strong&gt;提及的知识并非原创、均附有出处链接，详情可以点击进入&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;java-内存模型&#34;&gt;Java 内存模型&lt;/h1&gt;
+
+&lt;p&gt;Java内存模型(Java Mommory Model， JMM)描述了Java编程语言中的线程如何通过内存进行交互。(The Java memory model describes how threads in the Java programming language interact through memory.) &lt;a href=&#34;https://en.wikipedia.org/wiki/Java_memory_model&#34;&gt;jmm from wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;理解Java内存模型，对于编写表现行为正确的并发行为很重要。Java内存模型指定了如何与何时可以看到由其它线程修改过后的共享变量的值，以及，在必要时，如何同步的访问共享变量。（It is very important to understand the Java memory model if you want to design correctly behaving concurrent programs. The Java memory model specifies how and when different threads can see values written to shared variables by other threads, and how to synchronize access to shared variables when necessary.）&lt;a href=&#34;http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&#34;&gt;Java Memory Model, Jakob Jenkov&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;JMM 屏蔽了各种硬件和操作系统的内容访问差异，让Java程序在各种平台下达到了一致的并发效果。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
