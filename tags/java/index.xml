@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on FooZhi Blog</title>
-    <link>http://localhost:62531/blog/tags/java/</link>
+    <link>http://foozhi.github.io/blog/tags/java/</link>
     <description>Recent content in Java on FooZhi Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Mon, 23 Mar 2020 11:58:43 +0800</lastBuildDate>
     
-        <atom:link href="http://localhost:62531/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://foozhi.github.io/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java 并发编程</title>
-      <link>http://localhost:62531/blog/2020/java-concurrent-programming/</link>
+      <link>http://foozhi.github.io/blog/2020/java-concurrent-programming/</link>
       <pubDate>Mon, 23 Mar 2020 11:58:43 +0800</pubDate>
       
-      <guid>http://localhost:62531/blog/2020/java-concurrent-programming/</guid>
+      <guid>http://foozhi.github.io/blog/2020/java-concurrent-programming/</guid>
       <description>&lt;p&gt;这里汇总一些，Java并发编程相关的知识，推荐一些公认的写的和好的书籍。&lt;strong&gt;提及的知识并非原创、均附有出处链接，详情可以点击进入&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;java-内存模型&#34;&gt;Java 内存模型&lt;/h1&gt;

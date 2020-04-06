@@ -3,42 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:62531/blog/</loc>
+    <loc>http://foozhi.github.io/blog/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/tags/java/</loc>
+    <loc>http://foozhi.github.io/blog/tags/java/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/tags/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>http://foozhi.github.io/blog/tags/java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/2020/java-concurrent-programming/</loc>
+    <loc>http://foozhi.github.io/blog/2020/java-concurrent-programming/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/post/</loc>
+    <loc>http://foozhi.github.io/blog/post/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/tags/</loc>
+    <loc>http://foozhi.github.io/blog/tags/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/tags/%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>http://foozhi.github.io/blog/tags/%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2020-03-23T11:58:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:62531/blog/archives/</loc>
+    <loc>http://foozhi.github.io/blog/archives/</loc>
   </url>
   
 </urlset>
