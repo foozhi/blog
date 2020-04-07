@@ -225,15 +225,17 @@
 
 <h3 id="数据依赖性">数据依赖性</h3>
 
-<p>如果两个操作访问同一个变量，且这两个操作中有一个为写操作，此时这两个操作之间就存在数据依赖性。数据依赖分为下列3种类型：
-| 名称  | 代码示例 |
+<p>如果两个操作访问同一个变量，且这两个操作中有一个为写操作，此时这两个操作之间就存在数据依赖性。数据依赖分为下列3种类型：</p></li>
+</ul>
+</blockquote>
+
+<p>| 名称  | 代码示例 |
 |&mdash;|&mdash;|&mdash;|
 | 写后读  | a = 1; <br/> b=a;  |
 | 写后写  | a = 1; <br/> a=2;  |
-| 读后写  | a = b; <br/> b=1; |
-上面3种情况，只要重排序两个操作的执行顺序，程序的执行结果就会被改变。</p></li>
-</ul>
-</blockquote>
+| 读后写  | a = b; <br/> b=1; |</p>
+
+<p>上面3种情况，只要重排序两个操作的执行顺序，程序的执行结果就会被改变。</p>
 
 <p>编译器和处理器可能会对操作做重排序。编译器和处理器在重排序时，会遵守数据依赖性，编译器和处理器不会改变存在数据依赖关系的两个操作的执行顺序。</p>
 
@@ -277,15 +279,47 @@
 
 <h4 id="volatile的内存语义的实现">volatile的内存语义的实现</h4>
 
-<p>为了实现volatile的内存语义，JMM会限制编译器重排序和处理器重排序。
-|  操作 | 普通读/写  | volatile 读 | volatile 写 |
-|&mdash;|&mdash;|&mdash;|&mdash;|
-| 普通读/写 |    | | NO |
-| volatile 读 | NO | NO | NO |
-| volatile 写 | | NO  | NO |
-+  当第二个操作是volatile写时，不管第一个操作是什么，都不能重排序。这个规则确保volatile写之前的操作不会被编译器重排序到volatile写之后。
-+  当第一个操作是volatile读时，不管第二个操作是什么，都不能重排序。这个规则确保volatile读之后的操作不会被编译器重排序到volatile读之前。
-+  当第一个操作是volatile写，第二个操作是volatile读时，不能重排序。</p>
+<p>为了实现volatile的内存语义，JMM会限制编译器重排序和处理器重排序。</p>
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>普通读/写</th>
+<th>volatile 读</th>
+<th>volatile 写</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>普通读/写</td>
+<td></td>
+<td></td>
+<td>NO</td>
+</tr>
+
+<tr>
+<td>volatile 读</td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+
+<tr>
+<td>volatile 写</td>
+<td></td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>当第二个操作是volatile写时，不管第一个操作是什么，都不能重排序。这个规则确保volatile写之前的操作不会被编译器重排序到volatile写之后。</li>
+<li>当第一个操作是volatile读时，不管第二个操作是什么，都不能重排序。这个规则确保volatile读之后的操作不会被编译器重排序到volatile读之前。</li>
+<li>当第一个操作是volatile写，第二个操作是volatile读时，不能重排序。</li>
+</ul>
 
 <p>为了实现volatile的内存语义，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。
 +  在每个volatile写操作的前面插入一个 StoreStore屏障。防止上面的普通写和下面volatile的写重排序。
