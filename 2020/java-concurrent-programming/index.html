@@ -385,6 +385,11 @@
 
 <p>在一个线程中，初次读对象引用与初次读该对象包含的final域，JMM禁止处理器重排序这两个操作。（注意，这个规则仅仅针对处理器）。处理器会在读final域操作的前面插入一个LoadLoad屏障。</p>
 
+<h5 id="非阻塞算法-cas">非阻塞算法 CAS</h5>
+
+<p>CAS 同时具有volatile读和volatile写读内存语义，底层原子化的方式取代锁.
+<img src="java_concurrent_packet.png" alt="cas" /></p>
+
 <h3 id="参考引用">参考引用</h3>
 
 <ol>
